@@ -27,6 +27,10 @@
     {
       "packageName": "open-in-youtube",
       "projectFolder": "extensions/open-in-youtube"
+    },
+    {
+      "packageName": "listen-later",
+      "projectFolder": "extensions/listen-later"
     }
   ]
 }
