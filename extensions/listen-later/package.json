@@ -30,6 +30,7 @@
     "webpack-merge": "^4.2.2"
   },
   "dependencies": {
-    "query-string": "^6.11.1"
+    "query-string": "^6.11.1",
+    "@yt-lib/test": "~1.0.0"
   }
 }

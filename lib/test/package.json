@@ -1,0 +1,20 @@
+{
+  "name": "@yt-lib/test",
+  "version": "1.0.0",
+  "main": "dist/bundle.js",
+  "types": "dist/index.d.ts",
+  "typings": "./dist",
+  "license": "MIT",
+  "scripts": {
+    "watch": "rollup -cw",
+    "build": "rollup -c --silent"
+  },
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "~7.1.1",
+    "@rollup/plugin-typescript": "~4.0.0",
+    "@rollup/plugin-commonjs": "~11.0.2",
+    "rollup": "~2.3.3",
+    "rollup-plugin-typescript2": "~0.27.0",
+    "typescript": "~3.8.3"
+  }
+}

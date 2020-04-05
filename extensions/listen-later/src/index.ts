@@ -1,3 +1,4 @@
+import test, { test2 } from '@yt-lib/test';
 import {
   insertYouTubeButtonsFromContextData,
   mergeContexts,
@@ -5,6 +6,9 @@ import {
 } from './popupContainer';
 import { getDirectChildrens } from './utils/htmlElementsCollections';
 import { parseQuerystring } from './utils/querystring';
+
+test();
+test2();
 
 watchPopupContainerDisplay((isDisplayed) => {
   if (isDisplayed) {

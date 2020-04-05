@@ -31,6 +31,10 @@
     {
       "packageName": "listen-later",
       "projectFolder": "extensions/listen-later"
+    },
+    {
+      "packageName": "@yt-lib/test",
+      "projectFolder": "lib/test"
     }
   ]
 }
