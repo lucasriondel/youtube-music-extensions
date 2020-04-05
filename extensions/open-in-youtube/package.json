@@ -1,4 +1,5 @@
 {
+  "name": "open-in-youtube",
   "main": "src/index.ts",
   "scripts": {
     "build": "webpack --config webpack/webpack.prod.js && yarn resize-logo",
