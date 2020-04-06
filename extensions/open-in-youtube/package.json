@@ -1,9 +1,10 @@
 {
   "name": "open-in-youtube",
+  "version": "0.3",
   "main": "src/index.ts",
   "scripts": {
     "build": "webpack --config webpack/webpack.prod.js && yarn resize-logo",
-    "dev": "webpack --config webpack/webpack.dev.js",
+    "watch": "webpack --config webpack/webpack.dev.js",
     "resize-logo": "sharp -i \"extension/img/logo.png\" -o \"dist/logo128.png\" resize 128 128 && sharp -i \"extension/img/logo.png\" -o \"dist/logo48.png\" resize 48 48 && sharp -i \"extension/img/logo.png\" -o \"dist/logo16.png\" resize 16 16",
     "lint": "eslint \"src/**/*.ts\""
   },
@@ -30,6 +31,8 @@
     "webpack-merge": "^4.2.2"
   },
   "dependencies": {
-    "query-string": "^6.11.1"
+    "query-string": "^6.11.1",
+    "youtube-music-helper": "~1.0.0",
+    "dom-helper": "~1.0.0"
   }
 }

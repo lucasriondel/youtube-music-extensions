@@ -1,32 +1,38 @@
+import { popupContainer, youtubeUrl } from 'youtube-music-helper';
 import {
-  insertYouTubeButtonsFromContextData,
-  mergeContexts,
-  watchPopupContainerDisplay,
-} from './popupContainer';
-import { getDirectChildrens } from './utils/htmlElementsCollections';
-import { parseQuerystring } from './utils/querystring';
+  copyURLToClipboardButton,
+  openInYoutubeButton,
+  openInYoutubePlaylistButton,
+  openInYoutubeRadioButton,
+} from './buttons';
 
-watchPopupContainerDisplay((isDisplayed) => {
-  if (isDisplayed) {
-    // logPopupContainerContent();
-    try {
-      const menuNavigationItems = document.getElementsByTagName(
-        'ytmusic-menu-navigation-item-renderer'
-      );
+popupContainer.onDisplay(() => {
+  const { playlist, radioPlaylist, video } = popupContainer.computeContext();
+  console.log({ playlist, radioPlaylist, video });
+  const buttons = [];
 
-      // TODO add error throwing here for menuNavigationItems
-
-      const directChildrens = getDirectChildrens(menuNavigationItems);
-
-      const anchors = directChildrens.filter(
-        (children) => children instanceof HTMLAnchorElement
-      ) as HTMLAnchorElement[];
-
-      const contexts = anchors.map((a) => parseQuerystring(a.search));
-
-      insertYouTubeButtonsFromContextData(mergeContexts(contexts));
-    } catch (e) {
-      console.error(e);
-    }
+  if (playlist && !video) {
+    buttons.push(openInYoutubeButton(youtubeUrl.playlist(playlist)));
   }
+
+  if (radioPlaylist && video) {
+    buttons.push(
+      openInYoutubeRadioButton(youtubeUrl.videoInPlaylist(video, radioPlaylist))
+    );
+  }
+
+  if (playlist && video) {
+    buttons.push(
+      openInYoutubePlaylistButton(youtubeUrl.videoInPlaylist(video, playlist))
+    );
+  }
+
+  if (video) {
+    const url = youtubeUrl.video(video);
+
+    buttons.push(openInYoutubeButton(url));
+    buttons.push(copyURLToClipboardButton(url));
+  }
+
+  popupContainer.insertButtons(buttons);
 });

@@ -1,0 +1,8 @@
+{
+  "name": "youtube-music-extensions",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:lucasriondel/youtube-music-extensions.git",
+  "author": "Lucas Riondel <lucasrndl@gmail.com>",
+  "license": "MIT"
+}

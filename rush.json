@@ -29,12 +29,12 @@
       "projectFolder": "extensions/open-in-youtube"
     },
     {
-      "packageName": "listen-later",
-      "projectFolder": "extensions/listen-later"
+      "packageName": "youtube-music-helper",
+      "projectFolder": "lib/youtube-music-helper"
     },
     {
-      "packageName": "@yt-lib/test",
-      "projectFolder": "lib/test"
+      "packageName": "dom-helper",
+      "projectFolder": "lib/dom-helper"
     }
   ]
 }

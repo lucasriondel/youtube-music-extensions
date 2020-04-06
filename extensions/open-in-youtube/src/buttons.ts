@@ -1,6 +1,8 @@
-import { hidePopupContainer } from './popupContainer';
-import { createMenuItem, IPaperIconButtonAttributes } from './utils/create';
-import { copyToClipboard, openInNewTab } from './utils/navigatorActions';
+import { browserActions } from 'dom-helper';
+import {
+  IPaperIconButtonAttributes,
+  popupContainer,
+} from 'youtube-music-helper';
 
 const openInYoutubeButtonAttributes: IPaperIconButtonAttributes = {
   id: 'open-in-youtube-menu-item',
@@ -38,9 +40,9 @@ const basicGoToYoutubeButton = (
   url: string,
   buttonAttributes: IPaperIconButtonAttributes
 ) =>
-  createMenuItem(
+  popupContainer.createMenuItem(
     buttonAttributes.title,
-    () => openInNewTab(url),
+    () => browserActions.openInNewTab(url),
     buttonAttributes
   );
 
@@ -54,11 +56,11 @@ export const openInYoutubeRadioButton = (url: string) =>
   basicGoToYoutubeButton(url, openInYoutubeRadioButtonAttributes);
 
 export const copyURLToClipboardButton = (url: string) =>
-  createMenuItem(
+  popupContainer.createMenuItem(
     copyURLToClipboardButtonAttributes.title,
     () => {
-      copyToClipboard(url);
-      hidePopupContainer();
+      browserActions.copyToClipboard(url);
+      popupContainer.hide();
     },
     copyURLToClipboardButtonAttributes
   );
