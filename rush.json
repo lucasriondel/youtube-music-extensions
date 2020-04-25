@@ -29,12 +29,20 @@
       "projectFolder": "extensions/open-in-youtube"
     },
     {
+      "packageName": "open-in-genius",
+      "projectFolder": "extensions/open-in-genius"
+    },
+    {
       "packageName": "youtube-music-helper",
       "projectFolder": "lib/youtube-music-helper"
     },
     {
       "packageName": "dom-helper",
       "projectFolder": "lib/dom-helper"
+    },
+    {
+      "packageName": "webpack-chrome-extension-plugin",
+      "projectFolder": "lib/webpack-chrome-extension-plugin"
     }
   ]
 }

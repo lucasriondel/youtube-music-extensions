@@ -1,6 +1,6 @@
 {
-  "name": "open-in-youtube",
-  "version": "0.3",
+  "name": "open-in-genius",
+  "version": "0.1",
   "main": "src/index.ts",
   "scripts": {
     "build": "webpack --config webpack/webpack.prod.js && yarn resize-logo",
@@ -29,11 +29,17 @@
     "webpack": "^4.41.6",
     "webpack-cli": "^3.3.11",
     "webpack-merge": "^4.2.2",
-    "webpack-chrome-extension-plugin": "~1.0.0"
+    "webpack-chrome-extension-plugin": "~1.0.0",
+    "dotenv-webpack": "~1.7.0",
+    "@types/node": "~13.11.0",
+    "@babel/plugin-transform-runtime": "~7.9.0",
+    "@types/gapi.client.youtube": "v3"
   },
   "dependencies": {
     "query-string": "^6.11.1",
     "youtube-music-helper": "~1.0.0",
-    "dom-helper": "~1.0.0"
+    "dom-helper": "~1.0.0",
+    "dotenv-extended": "~2.8.0",
+    "@babel/runtime": "~7.9.2"
   }
 }
