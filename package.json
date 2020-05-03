@@ -4,5 +4,8 @@
   "main": "index.js",
   "repository": "git@github.com:lucasriondel/youtube-music-extensions.git",
   "author": "Lucas Riondel <lucasrndl@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "zip-a-folder": "^0.0.12"
+  }
 }

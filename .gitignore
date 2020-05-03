@@ -63,3 +63,5 @@ common/temp/
 **/.rush/temp/
 
 .vscode
+
+output/

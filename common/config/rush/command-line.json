@@ -20,6 +20,15 @@
 
       "safeForSimultaneousRushProcesses": true,
       "shellCommand": "npx concurrently -n dom-helper,youtube-music-helper,open-in-youtube \"cd lib/dom-helper && yarn watch\" \"cd lib/youtube-music-helper && yarn watch\" \"cd extensions/open-in-youtube && yarn watch\""
+    },
+    {
+      "commandKind": "global",
+
+      "name": "bundle",
+      "summary": "Bundle every extension",
+      "description": "Run this command to zip every extension to output folder",
+
+      "shellCommand": "node common/scripts/pack-extensions.js"
     }
   ],
 
