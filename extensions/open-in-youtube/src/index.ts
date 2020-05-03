@@ -8,7 +8,6 @@ import {
 
 popupContainer.onDisplay(() => {
   const { playlist, radioPlaylist, video } = popupContainer.computeContext();
-  console.log({ playlist, radioPlaylist, video });
   const buttons = [];
 
   if (playlist && !video) {

@@ -15,6 +15,9 @@ function createPaperIconButton(attributes: IPaperIconButtonAttributes) {
   return openInYoutubeButton;
 }
 
+export const menuItemContainerBaseClass =
+  "style-scope ytmusic-menu-popup-renderer";
+
 function createMenuItemHTMDivLElement(
   paperIconAttributes: IPaperIconButtonAttributes,
   itemText: string

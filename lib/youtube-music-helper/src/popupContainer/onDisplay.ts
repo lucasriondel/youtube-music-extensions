@@ -2,10 +2,7 @@ import domHelper from "dom-helper";
 import { getGlobalSharedObject } from "../global";
 import { addOnDisplayCallback, getOnDisplayCallbacks } from "./global";
 
-let init = false;
-
 function initWatcher() {
-  console.log("initWatcher");
   const popupContainer = document.getElementsByTagName(
     "ytmusic-popup-container"
   )[0] as HTMLElement;

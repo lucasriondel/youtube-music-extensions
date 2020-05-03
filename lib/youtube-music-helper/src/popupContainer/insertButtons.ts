@@ -6,6 +6,5 @@ export default function insertButtons(buttons: HTMLDivElement[]) {
       `popupContainer:insertButtons: paperListbox should have a value but is ${paperListbox}`
     );
 
-  console.log("buttons", buttons);
   buttons.map((button) => paperListbox.appendChild(button));
 }

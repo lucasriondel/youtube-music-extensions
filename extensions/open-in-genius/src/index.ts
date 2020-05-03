@@ -28,10 +28,10 @@ popupContainer.onDisplay(async () => {
 
   if (context.video) {
     const menuItem = openInGeniusButton();
-    console.log('menuItem', menuItem);
-    console.dir(menuItem);
-    menuItem.style.cursor = 'not-allowed';
-    menuItem.className = 'disabled';
+
+    menuItem.style.cursor = 'wait';
+    menuItem.className = `${popupContainer.menuItemContainerBaseClass} wait`;
+
     popupContainer.insertButtons([menuItem]);
     const youtubeVideo = await youtube.getVideo(context.video);
     if (youtubeVideo) {
@@ -41,11 +41,13 @@ popupContainer.onDisplay(async () => {
       if (response.hits.length > 0) {
         const url = response.hits[0].result.url;
 
-        // popupContainer.insertButtons([openInGeniusButton(url)]);
         menuItem.onclick = () => browserActions.openInNewTab(url);
-        // menuItem.className = '';
-        menuItem.style.cursor = 'pointer';
+      } else {
+        menuItem.onclick = () =>
+          browserActions.openInNewTab(genius.createSearchUrl(title));
       }
+      menuItem.style.cursor = 'pointer';
+      menuItem.className = popupContainer.menuItemContainerBaseClass;
     }
   }
 });

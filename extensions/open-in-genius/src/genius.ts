@@ -66,17 +66,20 @@ const search = async (value: string) => {
     q: value,
     access_token: process.env.GENIUS_ACCESS_TOKEN,
   });
+
   const response = await fetch(`${apiUrl}/search?${qs}`, {
     method: 'GET',
-    // headers: {
-    //   Authorization: `Bearer ${process.env.GENIUS_ACCESS_TOKEN}`,
-    // },
   });
 
   const jsonResponse = (await response.json()) as ISearchQueryResult;
+
   return jsonResponse;
 };
 
+const createSearchUrl = (search: string) =>
+  `https://genius.com/search?q=${encodeURI(search)}`;
+
 export default {
   search,
+  createSearchUrl,
 };
