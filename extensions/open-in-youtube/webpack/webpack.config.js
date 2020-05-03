@@ -9,7 +9,7 @@ module.exports = {
       { from: 'extension/manifest.json', to: '' },
       { from: 'src/style.css', to: '' },
     ]),
-    new WebpackChromeExtensionPlugin(),
+    new WebpackChromeExtensionPlugin({ extractPackageJsonVersion: true }),
   ],
   resolve: {
     extensions: ['.ts', '.js', '.json'],

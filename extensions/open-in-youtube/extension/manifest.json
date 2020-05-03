@@ -2,7 +2,7 @@
   "manifest_version": 2,
 
   "name": "Open in YouTube for YouTube Music",
-  "version": "0.2",
+  "version": "__WEBPACK_WILL_REPLACE_THIS__",
   "description": "Chrome extension to add a \"Open in YouTube\" feature for YouTube Music",
 
   "icons": {

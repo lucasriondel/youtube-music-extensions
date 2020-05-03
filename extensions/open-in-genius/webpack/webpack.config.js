@@ -1,5 +1,5 @@
 const CopyPlugin = require('copy-webpack-plugin');
-const WebpackChromeExtensionBundle = require('./WebpackChromeExtensionBundle.js');
+const WebpackChromeExtensionBundle = require('webpack-chrome-extension-plugin');
 const path = require('path');
 const Dotenv = require('dotenv-webpack');
 
@@ -11,7 +11,7 @@ module.exports = {
       { from: 'extension/manifest.json', to: '' },
       { from: 'src/style.css', to: '' },
     ]),
-    new WebpackChromeExtensionBundle(),
+    new WebpackChromeExtensionBundle({ extractPackageJsonVersion: true }),
   ],
   resolve: {
     extensions: ['.ts', '.js', '.json'],
